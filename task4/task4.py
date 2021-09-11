@@ -1,49 +1,25 @@
-values = ["a", "z", "x", "y"]
+import math
+import sys
 
-x = 1
-y = 10
-z = 2
-a = 9
-shag=0
+srednee = 0
+nums = []
 
-norm = (x+y+z+a)//4
+with open(sys.argv[1]) as vvod :
+    for line in vvod:
+        nums.append(int(line))
+        srednee += int(line)
 
+srednee = math.ceil(srednee / len(nums))
 
-for x in range(1, norm):
-    if x > norm:
-        x -= 1
-        shag +=1
-    else:
-        x += 1
-        shag +=1
+shag = 0
 
+for x in nums:
+    while(x != srednee):
+        if x > srednee:
+            x -= 1
+            shag +=1
+        else:
+            x += 1
+            shag +=1
 
-for y in range(1, norm):
-    if y > norm:
-        y -= 1
-        shag +=1
-
-    else:
-        y += 1
-        shag +=1
-
-
-for z in range(1, norm):
-    if z > norm:
-        z -= 1
-        shag +=1
-
-    else:
-        z += 1
-        shag +=1
-
-
-for a in range(1, norm):
-    if a > norm:
-        a -= 1
-        shag +=1
-    else:
-        a += 1
-        shag +=1
-
-print (shag)
+print(str(shag))

@@ -1,6 +1,7 @@
 
-n = int(input("n: "))
-m = int(input("m: "))
+import sys
+n = int(sys.argv[1])
+m = int(sys.argv[2])
 count = 0
 while count != 1:
     if count == 0:
